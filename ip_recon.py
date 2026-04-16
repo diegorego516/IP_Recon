@@ -17,11 +17,11 @@ BANNER = r"""
 print(BANNER)
 
 
-print("\nIP Recon Options Menu")
-options = input("1. Scan The Target IP? (Y/N): ")
-options = input("2. Verify If There Are Any Vulnerabilities In The Target Operating Systems, E.G 'Windows11', 'Mac OS X 18.6', 'Android-X86_64'? (Y/N): ")
-options = input("3. Analyze For Any Potential Vulnerabilities In The Target Networks? (Y/N): ")
-options = input("4. Generate A Concise, Convincing And Promissing Well Detailed Bug Bounty Report Document? (Y/N): ")
-options = input("5. Exit? (Y/N): ")
+print("\nIP")
+input("1. Scan The Target Operating System For Open_Ports? (Y/N): 'Y/N' E.G., (1-65535): ")
+input("2. Verify If There Are Any Potential Vulnerabilities In The Target Network? (Y/N): ")
+input("3. Recon The Target IPs For Known Security Flaws? (Y/N): ")
+input("4. Verify For Any Vulnerable Open_Ports In Target Operating Systems? (Y/N): ")
+input("5. Exit? (Y/N): ")
 print("Exiting...")
 sys.exit(0)
