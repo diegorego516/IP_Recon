@@ -22,36 +22,15 @@ options = input("2. Scan The Target IP For Open_Ports? (Y/N): ")
 options = input("3. Verify Target IP For Vulnerabilities? (Y/N): ")
 options = input("4. Check IF there IS Any Vulnerabilities In The Target IP? (Y/N): ")
 options = input("5. Exit? (Y/N): ")
-self = sys.exit(0)
+sys.exit(0)
 print("Exiting...")
 
+print("\nIP Recon Options Menu")
+options = input("1. Scan The Target IP? (Y/N): ")
+options = input("2. Verify If There Are Any Vulnerabilities In The Target Operating Systems, E.G 'Windows11', 'Mac OS X 18.6', 'Android-X86_64'? (Y/N): ")
+options = input("3. Analyze For Any Potential Vulnerabilities In The Target Networks? (Y/N): ")
+options = input("4. Generate A Concise, Convincing And Promissing Well Detailed Bug Bounty Report Document? (Y/N): ")
+options = input("5. Exit? (Y/N): ")
+sys.exit(0)
+print("Exiting...")
 
-
-def ip_recon(IPv4, Windows11, scan_ip_addresses):
-
-	ip_recon = Windows11
-	def recon_target_operating_system():
-      			ip_recon = IPv4 > recon_target_operating_system >= scan_ip_addresses
-def ip_recon():
-	ip_recon ("IPv4", "Windows11", "127.0.0.1", "192.168.87.145", "168.145.62.127")
-
-def scan_ip_addresses (IPv4):
-
-	def Windows11():
-
-		scan_ip_addresses > IPv4 > Windows11 >= scan_ip_addresses
-	scan_ip_addresses ("IPv4", "Windows11", "scan_ip_addresses")
-
-def scan_for_target_ip_addresses (IPv4, Windows11, scan_ip_addresses):
-
-	def get_all_files(modules):
-
-		options = input("Generate the result of the ip that you have done the recon with it and the target operating system.")
-
-if input == "Y":
-		print("You have done the recon of the IP Addresses and the target operating system.")
-
-def ip_recon (scan_ip_addresses):
-
-	if input == "Y":
-	        print("You have sucessfully scanned the target ip addresses.")
