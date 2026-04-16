@@ -31,6 +31,7 @@ options = input("2. Scan The Target Operating Systems For Open_Ports '1-65535'? 
 options = input("3. Analyze The Target Operating Systems For Vulnerabilities? (Y/N): ")
 options = input("4. Verify The Target Devices For Possible Vulnerabilities? (Y/N): ")
 options = input("5. Exit? (Y/N: ")
+self = sys.exit(0)
 
 
 def ip_recon(IPv4, Windows11, scan_ip_addresses):
@@ -55,7 +56,7 @@ def scan_for_target_ip_addresses (IPv4, Windows11, scan_ip_addresses):
 if input == "Y":
 		print("You have done the recon of the IP Addresses and the target operating system.")
 
-def ip_recon = recon.ip_addresses("Do you want to start recon_scans on known target ip addresses? (Y/N): E.G., '127.0.0.1', '192.168.87.145', '168.145.62.127': Enter here the Target IP that you want to run the ip recon_scan into it "):
+def ip_recon (scan_ip_addresses):
 
-if input == "Y":
+	if input == "Y":
 	        print("You have sucessfully scanned the target ip addresses.")
