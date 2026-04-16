@@ -1,9 +1,3 @@
-import os
-import sys
-import requests
-
-
-
 BANNER = r"""
 ██╗██████╗     ██████╗ ███████╗ ██████╗ ██████╗ ███╗   ██╗
 ██║██╔══██╗    ██╔══██╗██╔════╝██╔════╝██╔═══██╗████╗  ██║
@@ -24,4 +18,3 @@ input("3. Recon The Target IPs For Known Security Flaws? (Y/N): ")
 input("4. Verify For Any Vulnerable Open_Ports In Target Operating Systems? (Y/N): ")
 input("5. Exit? (Y/N): ")
 print("Exiting...")
-sys.exit(0)
