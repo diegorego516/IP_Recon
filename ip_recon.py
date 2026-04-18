@@ -1,3 +1,8 @@
+import os
+import sys
+import asyncio
+import socket
+
 BANNER = r"""
 ██╗██████╗     ██████╗ ███████╗ ██████╗ ██████╗ ███╗   ██╗
 ██║██╔══██╗    ██╔══██╗██╔════╝██╔════╝██╔═══██╗████╗  ██║
@@ -8,43 +13,56 @@ BANNER = r"""
 		[ IP RECON V3 - BY DIEGODEV ]
 """
 
-print(BANNER)
+def insert_additional_arguments(os, sys, asyncio):
+     insert_additional_arguments = "os, sys"
+
+def ip():
+
+	for _ in ip ("127.0.0.1", "192.168.87.145", "165.142.63.115"):
+		ip_recon.start_scan()
 
 
 print("\nIP Recon Options Menu")
-input("1. Scan The Target Operating System For Open_Ports? E.G., (1-65535): ")
-input("2. Verify If There Are Any Potential Vulnerabilities In The Target Network? (Y/N): ")
-input("3. Recon The Target IPs For Known Security Flaws? (Y/N): ")
-input("4. Verify For Any Vulnerable Open_Ports In Target Operating Systems? (Y/N): ")
-input("5. Exit? (Y/N): ")
+Variable = input("1. Do you want to scan for IPs Nearby? (Y/N): ")
+Variable = input("2. Should you verify the source of the vulnerabilities? (Y/N): ")
+Variable = input("3. Analyze for open_ports? (Y/N): ")
+Variable = input("4. Verify the nearby devices for possible known vulnerabilities? (Y/N): ")
+Variable = input("5. Search the sources in networks around for possible signs of leaks or data breaches? (Y/N): ")
+Variable = input("6. Exit? (Y/N): ")
 print("Exiting...")
+print(BANNER)
 
+# Simple vulnerability map for demonstration 
+VULN_DB = {
+	21: "FTP - Potential for anonymous login or cleartext exploits.",
+	22: "SSH - Check for outdated versions (e.g., OpenSSH < 7.2).",
+	23: "Telnet - Insecure cleartext communication.",
+	80: "HTTP - Check for misconfigured headers or outdated web servers.",
+	445: "SMB - Potential for EternalBlue or similar relay attacks.",
+}
 
-HOST = "142.127.45.105", "192.168.87.145", "168.145.62.127"
-PORT = "80, 21, 22" 
+async def scan_port(ip, port):
+	conn = asyncio.open_connect(ip, port)
+	try:
+		reader, writer = await asyncio.wait_for(conn, timeout=1.0)
+		writer.close()
+		await writer.wait_closed()
+		return port, True
+	except:
+		return port, False
 
-Variable = input("Scan the target Operating System For Open_Ports (1-65535): ")
-Variable = input("Do you Want to scan the target operating system for open_ports: (Y/N?): ")
-choice = input == "Y"
-Variable = input("Starts the scan on the target operating system for vulnerable open_ports? (Y/N): ")
-print("Finished scanning, No vulnerabilities found.")
+async def run_scanner(target_ip, port_range):
+	print(f"--- Scanning {target_ip} ---")
+	tasts = [scan_port(target_ip, port) for port in port_range]
+	results = await asyncio.gather(*tasks)
 
-print("\nInitializing IP Recon Framework Menu...")
-Variable = input("1. Start the scanning for vulnerable devices nearby? (Y/N): ")
-Variable = input("2. Verify the range in local networks for possible known vulnerabilities and sofisticated cyber threat signatures? (Y/N): ")
-Variable = input("3. Analyze the networks for open ports and determine if they're really vulnerable or not? (Y/N): ")
-Variable = input("4. Recon the networks for any case of incidents involving computer hacking signs or such illegal activities? (Y/N): ")
-Variable = input("5. Exit? (Y/N): ")
-print("Exiting...")
+	open_ports = [port for port, is_open in results if is_open]
 
-print("\nStarting The IP Recon Modules Menu")
-Variable = input("1. Start the IP Reconnainsance for IP Mapping? (Y/N): ")
-Variable = input("2. Verify the Open_Ports for any vulnerabilities? (Y/N): ")
-Variable = input("3. Analyze the Open_Ports for any case of data breaches or any incidents involving cyber attacks? (Y/N): ")
-Variable = input("4. Recon the IP Addresses for any incidents in nearby devices or PCs? (Y/N): ")
-Variable = input("5. Exit? (Y/N): ")
-print("Exiting...")
+	with open("vuln_scan_log.txt", "w") as log:file
+	for port in open_ports:
+		status = f"Port {port} is OPEN."
+		vuln_info = VULN_DB.get(port, "No common vulnerability in local DB.")
+		log_entry = f"{status}\nAnalysis: {vuln_info}\n{'-'*30}\n"
 
-def ip_recon():
-
-	ip_recon.scan(HOST, PORT)
+# Example usage
+# asyncio.run(run_scanner("127.0.0.1", range(20, 500)))
